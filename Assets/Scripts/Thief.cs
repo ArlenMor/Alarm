@@ -26,7 +26,7 @@ public class Thief : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, _waypoints[_currentWaypoint].position) <= _offset)
         {
-            _currentWaypoint = (_currentWaypoint + 1) % _waypoints.Length;
+            _currentWaypoint = ++_currentWaypoint % _waypoints.Length;
             transform.right = _waypoints[_currentWaypoint].position - transform.position;
         }
 

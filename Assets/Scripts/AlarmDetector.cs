@@ -8,11 +8,13 @@ public class AlarmDetector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnTriggerEntered?.Invoke();
+        if(collision.GetComponent<Thief>() != null)
+            OnTriggerEntered?.Invoke();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        OnTriggerExited?.Invoke();   
+        if (collision.GetComponent<Thief>() != null) 
+            OnTriggerExited?.Invoke();   
     }
 }
